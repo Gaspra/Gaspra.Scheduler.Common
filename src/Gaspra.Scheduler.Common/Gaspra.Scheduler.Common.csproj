@@ -1,16 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <OutputType>Library</OutputType>
-      <Version>0.0.3</Version>
-      <Authors>Gaspra</Authors>
-      <Description>Scheduler common library</Description>
-      <PackageLicenseExpression>MIT</PackageLicenseExpression>
-      <PackageProjectUrl>https://github.com/Gaspra/Gaspra.Scheduler.Common</PackageProjectUrl>
-      <RepositoryUrl>https://github.com/Gaspra/Gaspra.Scheduler.Common</RepositoryUrl>
-      <NeutralLanguage>en-GB</NeutralLanguage>
-      <IsPackable>true</IsPackable>
+    <Version>0.0.4</Version>
+    <Authors>Gaspra</Authors>
+    <Description>Scheduler common library</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Gaspra/Gaspra.Scheduler.Common</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Gaspra/Gaspra.Scheduler.Common</RepositoryUrl>
+    <NeutralLanguage>en-GB</NeutralLanguage>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
-
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
