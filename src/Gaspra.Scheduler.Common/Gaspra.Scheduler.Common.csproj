@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <OutputType>Library</OutputType>
-    <Version>0.0.4</Version>
+    <Version>0.0.5</Version>
     <Authors>Gaspra</Authors>
     <Description>Scheduler common library</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

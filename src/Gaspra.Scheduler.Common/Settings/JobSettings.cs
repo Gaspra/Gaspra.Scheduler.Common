@@ -11,5 +11,7 @@ namespace Gaspra.Scheduler.Common.Settings
         public string QueueIdentifier { get; } = null;
         public IDictionary<string, object> JobParameters { get; } = null;
         public TimeSpan CheckQueue { get; } = new TimeSpan(0, 15, 0);
+        public string JobCronExpression { get; } = null;
+        public TimeZoneInfo JobTimeZoneInfo { get; } = TimeZoneInfo.Utc;
     }
 }
