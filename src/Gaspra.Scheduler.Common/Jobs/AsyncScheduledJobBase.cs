@@ -4,14 +4,13 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Gaspra.Scheduler.Common
+namespace Gaspra.Scheduler.Common.Jobs
 {
     public abstract class AsyncScheduledJobBase : IAsyncScheduledJob
     {
-        public abstract JobSettings Settings { get; }
         public abstract Func<Task> Job { get; }
 
-        public virtual async Task Manage()
+        public virtual async Task Manage(JobSettings jobSettings)
         {
             await Task.Run(() =>
             {
@@ -23,12 +22,12 @@ namespace Gaspra.Scheduler.Common
                     .Queues();
 
                 var queueCount = monitoringApi
-                    .EnqueuedCount(Settings.QueueIdentifier);
+                    .EnqueuedCount(jobSettings.QueueIdentifier);
 
                 if (queueCount > 1)
                 {
                     var enqueuedJobIds = monitoringApi
-                        .EnqueuedJobs(Settings.QueueIdentifier, 0, int.MaxValue)
+                        .EnqueuedJobs(jobSettings.QueueIdentifier, 0, int.MaxValue)
                         .Select(j => j.Key);
 
                     foreach (var jobId in enqueuedJobIds)
@@ -40,7 +39,7 @@ namespace Gaspra.Scheduler.Common
             });
         }
 
-        public virtual async Task Execute()
+        public virtual async Task Execute(JobSettings jobSettings)
         {
             try
             {

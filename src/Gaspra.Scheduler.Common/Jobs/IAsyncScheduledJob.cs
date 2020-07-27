@@ -1,13 +1,11 @@
 ﻿using Gaspra.Scheduler.Common.Settings;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Gaspra.Scheduler.Common
+namespace Gaspra.Scheduler.Common.Jobs
 {
     public interface IAsyncScheduledJob
     {
-        public JobSettings Settings { get; }
-        public Task Manage();
-        public Task Execute();
+        public Task Manage(JobSettings jobSettings);
+        public Task Execute(JobSettings jobSettings);
     }
 }
